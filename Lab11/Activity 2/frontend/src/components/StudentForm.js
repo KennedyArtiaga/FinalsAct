@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 const StudentForm = ({ addStudent }) => {
   const [name, setName] = useState("");
@@ -26,11 +25,21 @@ const StudentForm = ({ addStudent }) => {
   };
 
   return (
-    <div className="text-center">
+    <div className="form-container">
       <h2>Add Student</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Student Name" value={name} onChange={(e) => setName(e.target.value)} />
-        <input type="text" placeholder="Course" value={course} onChange={(e) => setCourse(e.target.value)} />
+      <form onSubmit={handleSubmit} className="form">
+        <input
+          type="text"
+          placeholder="Student Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Course"
+          value={course}
+          onChange={(e) => setCourse(e.target.value)}
+        />
         <input type="file" onChange={(e) => setImage(e.target.files[0])} />
         <button type="submit">Add Student</button>
       </form>

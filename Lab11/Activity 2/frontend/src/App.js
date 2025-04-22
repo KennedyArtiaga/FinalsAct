@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import StudentForm from "./components/StudentForm";
 import StudentList from "./components/StudentList";
+import "./App.css";
+import logo from "./assets/logo.jpg"; // Replace with your image path
 
 const App = () => {
   const [students, setStudents] = useState([]);
@@ -26,7 +28,8 @@ const App = () => {
   };
 
   return (
-    <div className="container text-center">
+    <div className="main-container">
+      <img src={logo} alt="Logo" className="logo" />
       <h1>Student Recording System</h1>
       <StudentForm addStudent={addStudent} />
       <StudentList students={students} deleteStudent={deleteStudent} />
